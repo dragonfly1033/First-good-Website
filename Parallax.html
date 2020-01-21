@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Animations</title>
+	<style type="text/css">body, html{
+            height: 100%;
+            margin:0;
+            font-size:16px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
+            line-height: 1.8em;
+            color:#666;
+        }
+        .overlay{
+            position: absolute;
+            width:100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0;
+            z-index: -1;
+            transition: 0.4s ease-in-out;
+            cursor: pointer;
+        }
+        .shape{
+            transform: skew(-15deg) translate(-90px, 20px);
+            letter-spacing: 4px;
+        }
+        .nav{
+            position: absolute;
+            background-color: #f4f4f4;
+            height: 100%;
+            float: left;
+            z-index: 10;
+            width:0px;
+            opacity: 0;
+            transition: 0s ease-in;
+            padding:20px;
+            font-size: 36px;
+            list-style: none;
+            transform: skew(15deg) translate(-225px,0px);
+            letter-spacing: 4px;
+        }
+        .nav div{
+            float: right;
+            color:#585858;
+        
+        }
+        .nav li{
+            font-size: 22px;
+            margin-top:50px;
+        }
+        .nav .shape li:hover{
+            animation: i 0.5s ease-in-out 0s 1 normal forwards;
+        }
+        .nav .shape #li1:hover ~ #hr1{
+            animation: l 0.5s ease-in-out 0s 1 normal forwards;
+        }
+        .nav .shape #li2:hover ~ #hr2{
+            animation: l 0.5s ease-in-out 0s 1 normal forwards;
+        }
+        .nav .shape #li3:hover ~ #hr3{
+            animation: l 0.5s ease-in-out 0s 1 normal forwards;
+        }
+        @keyframes i{
+            0%{
+                transform: scale(1) translate(0px, 0px);
+            }
+            100%{
+                transform: scale(1.1) translate(350px, 0px);
+            }
+        }
+        @keyframes l{
+            0%{
+                width:100px;
+            }
+            100%{
+                width:500px;
+            }
+        }
+        .nav div img{
+            float: right;
+            width: 0;
+            margin-left:0px;
+            transform: translate(50px, -2px) scale(0.7);
+            cursor: pointer;
+        }
+        .shape a{
+            background-color: #f4f4f4;
+            border: #f4f4f4;
+            font-family: 'Times New Roman', 'Times New Roman', Times, serif;  
+            color: #585858;
+            font-size: 22px;
+            letter-spacing: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .pimg1{
+            background-image: url('https://pillarwm.com/wp-content/uploads/2019/04/aerial-architecture-blue-sky-466685.jpg');
+            background-repeat: no-repeat;
+            min-height: 100%;
+            background-attachment: fixed;
+            opacity: 0.7;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+        }
+        .pimg1 > #menuimg{
+            width:60px;
+            height: 45px;
+            margin:10px;
+            transition: 0s ease-in;
+            cursor: pointer;
+            animation: come1 1.5s ease-in;
+            position: sticky;
+        }
+        .pimg1>.dragon{
+            transition: 0s ease-in;
+            width:60px;
+            height: 45px; 
+            transform: translateY(-10px);
+            animation: come1 1.5s ease-in;
+        }
+        @keyframes come1{
+            0%{
+                transform:translateX(-100px);
+            }
+            100%{
+                transform:translateX(0px);
+            }
+        }
+        .pimg2{
+            background-image: url('https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=format%2Ccompress&amp%3Bcs=tinysrgb&amp%3Bfit=crop&amp%3Bh=1200&amp%3Bw=800');
+            background-repeat: no-repeat;
+            min-height: 400px;
+            background-attachment: fixed;
+            opacity: 0.7;  
+            position: relative;
+            background-position: center;
+            background-size: cover;             
+        }
+        .pimg3{
+            background-image: url('https://media-api.xogrp.com/images/da619956-26e2-491b-a41f-df6cd62580e1~rs_2001.480.fit.jpg');
+            background-repeat: no-repeat;
+            min-height: 400px;
+            background-attachment: fixed;
+            opacity: 0.7;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+        
+        }
+        .ptext{
+            position: absolute;
+            top: 50%;
+            width:100%;
+            text-align: center;
+            color:#111;
+            font-size: 27px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            padding: 5px;
+            animation: come 1.2s ease-in;
+        }
+
+        @keyframes come{
+            0%{
+                opacity:0;
+            }
+            100%{
+                opacity:1;
+            }
+        }
+
+        .ptext .border{
+            background-color: #f4f4f4;
+            padding: 5px;
+        }
+        .section-light{
+            background-color: #f4f4f4;
+            color:#666;
+            text-align: center;
+            padding: 50px 80px;
+        }
+        .section-dark{
+            background-color: #282e34;
+            color:#ddd;
+            text-align: center;
+            padding:50px 80px;
+        }
+        h2{
+            margin:0;
+        }
+        p{
+            margin:0;
+        }
+        .mes{
+            display: none;
+        }
+        @media(max-width:568px){
+            .pimg1, .pimg2, .pimg3{
+                background-attachment: scroll;
+            }
+        }
+	</style>
+</head>
+<body>
+<div class="overlay" id="over" onclick="close1()">&nbsp;</div>
+
+<div class="nav" id="nav1">
+<div class="shape"><img alt="or not then" id="cancelimg" onclick="close1()" src="https://cdn0.iconfinder.com/data/icons/controls-and-navigation-arrows-3/24/146-512.png" /> Menu<br />
+&nbsp;
+<ul>
+	<li id="li1"><a href="#">About Me</a></li>
+</ul>
+
+<hr id="hr1" width="20" />
+<ul>
+	<li id="li2"><a href="#">My Work</a></li>
+</ul>
+
+<hr id="hr2" width="20" />
+<ul>
+	<li id="li3"><a href="#">Contact Me</a></li>
+</ul>
+
+<hr id="hr3" width="20" /></div>
+</div>
+
+<div class="pimg1"><img alt="or not then" id="menuimg" onclick="open1()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" /> <img alt="or not then" class="dragon" src="https://www.skutis.co/wp/wp-content/uploads/2017/08/dragonfly-logo.png" />
+<div class="ptext"><span class="border">Dragonfly1033 </span></div>
+</div>
+
+<section class="section section-light">
+<h2>Section 1</h2>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam iusto necessitatibus architecto amet cumque esse nam quam consectetur autem non in repudiandae placeat illo, ipsa quasi voluptates expedita est ratione, beatae incidunt dolores ad assumenda fugiat? Harum in sed ipsa dignissimos atque amet. Temporibus autem ad facilis nemo rem ipsa ducimus quis, voluptate voluptates rerum doloremque officia molestias vero deleniti non magni iste aperiam amet quas quam consequatur et deserunt omnis itaque? Praesentium, voluptatum dolor optio illo assumenda recusandae a fuga possimus quo minus ut vero ducimus cumque ratione sint libero adipisci corporis distinctio illum voluptate enim repellat esse inventore.</p>
+</section>
+
+<div class="pimg2">
+<div class="ptext"><span class="border">Dragonfly1033 </span></div>
+</div>
+
+<section class="section section-dark">
+<h2>Section 2</h2>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eum voluptate odio assumenda aperiam repellat qui et est adipisci consequuntur deleniti labore ut nihil mollitia repudiandae! Architecto fugit error enim deserunt nulla quisquam itaque, numquam id quidem dolore eius quae quia, provident dignissimos eos consequatur nobis? Officia voluptates sed eum vitae recusandae deserunt modi ducimus, corrupti aliquid vel deleniti nemo enim fuga cumque animi temporibus facere? Suscipit quos pariatur incidunt.</p>
+</section>
+
+<div class="pimg3">
+<div class="ptext"><span class="border">Dragonfly1033 </span></div>
+</div>
+
+<section class="section section-dark">
+<h2>Section 3</h2>
+
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem consequuntur unde repellendus alias! Esse, repellendus qui voluptatem atque, dicta, error commodi aliquam soluta iusto maxime sequi ab dolorem dolores reiciendis dolore repudiandae maiores ad expedita doloremque ducimus eum? Iure aliquid vero fuga deleniti inventore reiciendis ab ad adipisci, fugit eaque id doloremque nesciunt natus repellendus dolores asperiores quibusdam iusto? Mollitia, ipsam quae itaque nihil, voluptatibus maiores vero, assumenda deserunt impedit quos similique enim culpa reprehenderit dolores officia. Impedit, quisquam voluptatibus.</p>
+</section>
+
+<div class="pimg1">
+<div class="ptext"><span class="border">Dragonfly1033 </span></div>
+
+<div class="mes">
+<p>40 26 40 c2 a6 25 40 c2 ac 2f 40 c2 ac 2f 20 c2 a6 2f 40 25 40 c2 a6 2f 25 2e 0d 0a 2a 2f 40 25 40 25 2f 25 20 40 26 40 25 40 25 40 26 40 c2 ac 20 40 c2 ac 2f 25 c2 ac 40 2a 2f 40 c2 a6 2f 25 c2 a6 2f 20 40 23 40 25 40 c2 a6 25 20 40 26 40 2a 2f 23 40 c2 a6 2f 2a 40 23 2e 0d 0a 23 40 c2 a6 20 40 40 26 40 c2 ac 40 23 40 26 40 20 2a 2f c2 ac 40 25 2f 40 25 2f 40 26 40 25 20 40 23 40 25 40 c2 a6 25 40 25 40 c2 a6 2f 25 20 25 2f 23 40 c2 a6 2f 23 40 23 2a 2f 25 c2 a6 2f 2e 0d 0a 40 26 40 2a 2f 23 40 23 20 2a 2f c2 ac 40 23 20 c2 ac 2f 25 25 40 c2 a6 2f 20 c2 a6 2f 40 2a 2f c2 ac 2a 40 25 40 c2 a6 2f 25 2f 40 c2 ac 2f 40 26 40 25 31 30 33 33 2e 0d 0a 2a 2f 40 25 40 25 2f 25 20 40 26 40 25 40 25 40 26 40 c2 ac 20 2a 2f c2 ac c2 a6 2f 20 25 2f 40 26 40 c2 ac 40 c2 a6 2f 2e 0d 0a c2 a6 2f 40 25 40 c2 a6 2f 25 2e</p>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>
+            
+        function open1(){
+            document.getElementById('nav1').style.transitionDuration = '0.3s';
+            document.getElementById('nav1').style.width = '500px';
+            document.getElementById('nav1').style.opacity = '1';
+            document.getElementById('menuimg').style.transitionDuration = '0.3s';
+            document.getElementById('menuimg').style.marginLeft = '250px';
+            document.getElementById('cancelimg').style.width = '35px';
+            document.getElementById('over').style.opacity = '0.6';
+            document.getElementById('over').style.zIndex = '8';
+        }
+        function close1(){
+            document.getElementById('nav1').style.transitionDuration = '0.3s';
+            document.getElementById('nav1').style.width = '0px';
+            document.getElementById('nav1').style.opacity = '0';
+            document.getElementById('menuimg').style.transitionDuration = '0.3s';
+            document.getElementById('menuimg').style.marginLeft = '10px';
+            document.getElementById('over').style.opacity = '0';
+            document.getElementById('over').style.zIndex = '-1';
+        }
+        $(document).scroll(function(){
+            var sc = $(window).scrollTop();
+            console.log(sc)
+            if (sc > 75){
+                close1();
+            };
+        })
+
+   </script></body>
+</html>

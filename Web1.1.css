@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
+
+h1{
+    font-family:'Source Code Pro';
+    font-weight: 200; 
+    font-size: 54px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-bottom: 2px solid #e7dfdd;
+    text-align: center;
+}
+
+body{
+    background-color: #0e0b16;
+    color:#e7dfdd;
+    font-family:'Source Code Pro';
+    font-weight: 200;
+    font-size: 24px;
+    margin:0;
+
+}
+
+.body{
+    text-align: center;
+
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    margin-top: 1em;
+}
+
+button{
+    padding: 10px;
+    margin:25px;
+    border: 1px solid #4717f6;
+    background-color: #0e0b16;
+    color:#e7dfdd;
+    font-family: 'Source Code Pro';
+    font-weight: 200;
+    font-size: 24px;
+
+}
+
+button:hover{
+    transition: 0.6s;
+    color:#e7dfdd;
+    border: 1px solid #0e0b16;
+    background-color: #4717f6;
+    text-decoration: underline;
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+
+}
+
+.nav div{
+    border-bottom: 2px solid #e7dfdd;
+    transform: translateY(-5px);
+}
+
+.nav ul{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.nav div a{
+    color: #e7dfdd;
+    text-decoration: none;
+    text-align: center;
+    line-height: 72px;
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+
+.nav div:hover{
+    transition: 0.7s;
+    border-bottom: 2px solid #4717f6;
+    background-color: #4717f6
+}
